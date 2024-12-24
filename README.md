@@ -23,28 +23,29 @@ This project is a simple machine learning-powered Flask application that predict
 ### Steps
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone git@github.com:jayeshmalviy07/flower_predictions.git
-   cd flower_predictions```
+   cd flower_predictions
+   ```
    
 2. Create and activate a virtual environment (optional but recommended):
-   ```bash
-      python -m venv venv
-      source venv/bin/activate  # On Windows: venv\Scripts\activate```
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate'
+   ```
 
 3. Install the required dependencies:
    ```
-    bash
-    pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 4. Run the Flask application:
    ```
-    bash
-    python app.py
+   python app.py
+   ```
 
 4. Open the app in your browser:
    ```
-    http://127.0.0.1:5000/
+   http://127.0.0.1:5000/
    ```
 ## Usage 📋
 - Enter the dimensions of the sepal and petal (length and width) in the input form.
