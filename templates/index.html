@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Predictions</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin:20px;
+            padding:20px;
+            max-width:600px;
+        }
+
+        form{
+            margin-bottom:20px;
+        }
+        input{
+            margin:5px 0;
+            padding:8px;
+            width:100%;
+        }
+        button{
+            padding:10px 20px;
+            background-color:#007BFF;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+        .result{
+            margin-top:20px;
+            padding:10px;
+            background: color #f8f9fa;
+            border:1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris Flower Predictions</h1>
+    <form action="/predict" method="POST">
+        <label for="sepal_length">Sepal Length (cm):</label>
+        <input type="text" id="sepal_length" name="sepal_length" required>
+
+        <label for="sepal_width">Sepal Width (cm):</label>
+        <input type="text" id="sepal_width" name="sepal_width" required>
+
+        <label for="petal_length">Petal Length (cm):</label>
+        <input type="text" id="petal_length" name="petal_length" required>
+
+        <label for="petal_width">Petal Width (cm):</label>
+        <input type="text" id="petal_width" name="petal_width" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>{{ prediction }}</h3>
+    </div>
+    {% endif %}
+
+    {% if plot_img %}
+    <h3> Visualization of data</h3>
+    <img src="data:image/png;base64,{{ plot_img}}" alt="iris dataset plot">
+    {% endif %}
+
+    {% if error %}
+    <div class="result">
+        <h3 style="color:red">{{ error }}</h3>
+    </div>
+    {% endif %}
+</body>
+</html>
